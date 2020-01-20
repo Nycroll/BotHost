@@ -41,7 +41,7 @@ if (message.content === '?Spotify'){
 });
 client.on('message', message =>{
     if (!message.guild) return;
-if (message.content === '?Spotify'){
+if (message.content === '?Minecraft'){
     if (usedCommandRecently4.has(message.author.id)){
         message.channel.send('Your **Cooldown** expires in one hour.')
     } else{
@@ -49,11 +49,11 @@ if (message.content === '?Spotify'){
         setTimeout(() =>{
             usedCommandRecently4.delete(message.author.id);
         }, 36000000 )
-    var string = `spotify1
-    spotify2
-    spotify3
-    spotify4
-    spotify5`
+    var string = `Minecraft1
+    Minecraft2
+    Minecraft3
+    Minecraft
+    Minecraft`
     var words = string.split('\n');
     let random = words[Math.floor(Math.random()*words.length)];
     message.author.send(`${random}`);
