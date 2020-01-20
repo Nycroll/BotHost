@@ -36,4 +36,4 @@ if (message.content === '?Spotify'){
 };
 };
 });
-client.login(token);
+client.login(process.env.token);
