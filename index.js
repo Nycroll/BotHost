@@ -60,5 +60,4 @@ if (message.content === '?Minecraft'){
 };
 };
 });
-
 client.login(process.env.token);
