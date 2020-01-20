@@ -36,9 +36,6 @@ if (message.content === '?Spotify'){
 };
 };
 });
-};
-};
-});
 client.on('message', message =>{
     if (!message.guild) return;
 if (message.content === '?Minecraft'){
