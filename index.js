@@ -19,7 +19,7 @@ client.on('message', message =>{
     if (!message.guild) return;
 if (message.content === '?Spotify'){
     if (usedCommandRecently4.has(message.author.id)){
-        message.channel.send('Your **Cooldown** expires in one hour.')
+        message.channel.send('{user} Your **Cooldown** expires in one hour.')
     } else{
         usedCommandRecently4.add(message.author.id);
         setTimeout(() =>{
@@ -40,7 +40,7 @@ client.on('message', message =>{
     if (!message.guild) return;
 if (message.content === '?Minecraft'){
     if (usedCommandRecently4.has(message.author.id)){
-        message.channel.send('Your **Cooldown** expires in one hour.')
+        message.channel.send('{user} Your **Cooldown** expires in one hour.')
     } else{
         usedCommandRecently4.add(message.author.id);
         setTimeout(() =>{
