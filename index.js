@@ -1,41 +1,61 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = process.env.arcadia
+const token = 'NjY4NDgxOTUzMzk3MjExMTk3.XiXcdg.g4Nmr515a7U-G0eQ_chxkb8ct40'
 const prefix = '?'
 usedCommandRecently4 = new Set();
 
 client.on('ready', () => {
-   client.user.setPresence({
-        game: {
-            name: config.status,
-            type: "WATCHING"
-        }
-   })
-
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-
+    console.log('gen bot is now online')
+    
+    client.user.setActivity("Invite", { type: "invite.gg/nycrollcracks" });
+});
+client.on('message', message =>{
+    if (message.content === 'hello'){
+        message.author.send('hi');
+    };
+});
+client.on('message', message =>{
+    if (!message.guild) return;
+if (message.content === '?Spotify'){
+    if (usedCommandRecently4.has(message.author.id)){
+        message.channel.send('Your **Cooldown** expires in one hour.')
+    } else{
+        usedCommandRecently4.add(message.author.id);
+        setTimeout(() =>{
+            usedCommandRecently4.delete(message.author.id);
+        }, 36000000 )
+    var string = `spotify1
+    spotify2
+    spotify3
+    spotify4
+    spotify5`
+    var words = string.split('\n');
+    let random = words[Math.floor(Math.random()*words.length)];
+    message.author.send(`${random}`);
+};
+};
+});
+client.on('message', message =>{
+    if (!message.guild) return;
+if (message.content === '?Minecraft'){
+    if (usedCommandRecently4.has(message.author.id)){
+        message.channel.send('Your **Cooldown** expires in one hour.')
+    } else{
+        usedCommandRecently4.add(message.author.id);
+        setTimeout(() =>{
+            usedCommandRecently4.delete(message.author.id);
+        }, 36000000 )
+    var string = `spotify1
+    spotify2
+    spotify3
+    spotify4
+    spotify5`
+    var words = string.split('\n');
+    let random = words[Math.floor(Math.random()*words.length)];
+    message.author.send(`${random}`);
+};
+};
 });
 
-client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content.indexOf(config.prefix) !== 0) return;
-      
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-      
-    try {
-        let commandFile = require(`./commands/${command}.js`);
-        commandFile.run(client, message, args);
-    } catch (err) {
-        console.error(err);
-    }
-});
-
-client.on("error", (e) => console.error(e));
-client.on("warn", (e) => console.warn(e));
-client.on("debug", (e) => console.info(e));
+client.login(token);
