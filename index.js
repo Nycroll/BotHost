@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = proces.env.token
+const token = process.env.token
 const prefix = '?'
 usedCommandRecently4 = new Set();
 
@@ -58,4 +58,4 @@ if (message.content === '?Minecraft'){
 };
 });
 
-client.login(proces.env.token);
+client.login(process.env.token);
